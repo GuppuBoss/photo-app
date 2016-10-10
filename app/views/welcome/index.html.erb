@@ -1,4 +1,39 @@
-<h1>Welcome to Photo App</h1>
+<% if current_user %>
+  <h2>Welcome to Photo App</h2>
+<% else %>
+  <div class="jumbotron text-center">
+    <h3>Welcome to Photo Management App</h3>
+    <p class="lead">
+      You will love managing your photos with our application. Sign Up!
+    </p>    
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Premium Plan</h3>
+        <ul>
+          <li>Unlimited Image Uploads</li>
+          <li>Responsive Design</li>
+          <li>Access Anywhere</li>
+          <%= link_to 'Sign Up - $10', new_user_registration_path, class: 'btn btn-success'%>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h3>Amaze Plan</h3>
+        <ul>
+          <li>Unlimited Image Uploads</li>
+          <li>Responsive Design</li>
+          <li>Access Anywhere</li>
+          <li>Unlimited Projects</li>
+          <%= link_to 'Sign Up - $20', new_user_registration_path, class: 'btn btn-success'%>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<!-- 
 <p>Email in Production</p>
 <p> heroku addons:create sendgrid:starter</p>
 <p>heroku config:set SENDGRID_USERNAME=</p>
@@ -35,3 +70,4 @@
 <p>
   config.action_mailer.default_url_options = { :host => 'MyLiveSiteUrl.com', :protocol => 'https' }
 </p>
+ -->
